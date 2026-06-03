@@ -15,6 +15,55 @@ def _escape_html(text: str) -> str:
     return html_lib.escape(text) if text else ""
 
 
+def _bold_titles(text: str) -> str:
+    """将行首序号后的标题文字加粗"""
+    return re.sub(r"^(\d+\.\s+)(.+)$", r"\1**\2**", text, flags=re.MULTILINE)
+
+
+def _is_empty_section(text: str) -> bool:
+    """判断是否为空板块"""
+    stripped = text.strip()
+    if not stripped:
+        return True
+    return stripped.startswith("今日暂无")
+
+
+def _clean_ai_output(text: str) -> str:
+    """清理AI输出中的重复标题和格式"""
+    # 移除AI可能输出的Markdown标题（如 ### 板块一 / ### 【GitHub...】）
+    text = re.sub(r"^#{1,4}\s+.*$", "", text, flags=re.MULTILINE)
+    # 移除AI可能给分类名加的粗体（如 **AI编程** -> AI编程）
+    # 只处理独占一行的短粗体行（分类标签），保留标题行的粗体
+    text = re.sub(r"^\*\*([^*\n]{1,25})\*\*$", r"\1", text, flags=re.MULTILINE)
+    # 清理多余空行（连续3个以上换行合并为2个）
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+
+def _format_custom_section(text: str) -> str:
+    """格式化自定义板块：加粗标题、高亮分类标签、优化条目间距"""
+    text = text.strip()
+    # 先清理AI输出的重复格式
+    text = _clean_ai_output(text)
+    # 加粗行首序号后的标题
+    text = _bold_titles(text)
+    # 高亮分类标签（独占一行、不以数字/空格/特殊字符开头的短行）
+    # 注意：字符类中用空格代替\s，避免跨行匹配导致加粗标记被拆到两行
+    text = re.sub(
+        r"^(?!.*\d+\.)(?!.*\*\*)(?!.*\[)(?!.*\s{3})([^\n\s#\-*_\[][一-龥A-Za-z/· ]{1,25})$",
+        r"**\1**",
+        text,
+        flags=re.MULTILINE,
+    )
+    # 每个序号项前加空行（第一条除外），使条目间有视觉分隔
+    text = re.sub(r"(?<!\n)\n(\d+\.\s)", r"\n\n\1", text)
+    # 分类标签前加空行
+    text = re.sub(r"(?<!\n)\n(\*\*[^*\n]+\*\*\n)", r"\n\n\1", text)
+    # 清理多余空行（最多保留2个换行）
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text
+
+
 def _format_list_content(text: str) -> str:
     """
     格式化列表内容，确保序号前有换行
@@ -123,6 +172,23 @@ def render_ai_analysis_feishu(result: AIAnalysisResult) -> str:
 
     lines = ["**✨ AI 热点分析**", ""]
 
+    # 自定义六板块优先
+    if result.custom_sections:
+        section_titles = {
+            "open_source_projects": "【GitHub 高分开源项目】",
+            "frontier_models": "【前沿大模型动态】",
+            "ai_tools": "【免费 AI 工具】",
+            "ai_industry": "【AI 行业可落地进展】",
+            "self_media": "【自媒体运营实战】",
+            "fullstack": "【全栈开发实操】",
+        }
+        for key, title in section_titles.items():
+            content = result.custom_sections.get(key, "")
+            if content and not _is_empty_section(content):
+                lines.extend([f"**{title}**", _format_custom_section(content), ""])
+        return "\n".join(lines)
+
+    # 回退到原始板块
     if result.core_trends:
         lines.extend(["**核心热点态势**", _format_list_content(result.core_trends), ""])
 
@@ -396,56 +462,77 @@ def render_ai_analysis_html_rich(result: AIAnalysisResult) -> str:
                     </div>
                     <div class="ai-blocks-grid">"""
 
-    if result.core_trends:
-        content = _format_list_content(result.core_trends)
-        content_html = _escape_html(content).replace("\n", "<br>")
-        ai_html += f"""
+    # 自定义六板块优先
+    if result.custom_sections:
+        section_titles = {
+            "open_source_projects": "【GitHub 高分开源项目】",
+            "frontier_models": "【前沿大模型动态】",
+            "ai_tools": "【免费 AI 工具】",
+            "ai_industry": "【AI 行业可落地进展】",
+            "self_media": "【自媒体运营实战】",
+            "fullstack": "【全栈开发实操】",
+        }
+        for key, title in section_titles.items():
+            content = result.custom_sections.get(key, "")
+            if content:
+                content_html = _escape_html(content.strip()).replace("\n", "<br>")
+                ai_html += f"""
+                    <div class="ai-block">
+                        <div class="ai-block-title">{_escape_html(title)}</div>
+                        <div class="ai-block-content">{content_html}</div>
+                    </div>"""
+    else:
+        # 回退到原始板块
+        if result.core_trends:
+            content = _format_list_content(result.core_trends)
+            content_html = _escape_html(content).replace("\n", "<br>")
+            ai_html += f"""
                     <div class="ai-block">
                         <div class="ai-block-title">核心热点态势</div>
                         <div class="ai-block-content">{content_html}</div>
                     </div>"""
 
-    if result.sentiment_controversy:
-        content = _format_list_content(result.sentiment_controversy)
-        content_html = _escape_html(content).replace("\n", "<br>")
-        ai_html += f"""
+        if result.sentiment_controversy:
+            content = _format_list_content(result.sentiment_controversy)
+            content_html = _escape_html(content).replace("\n", "<br>")
+            ai_html += f"""
                     <div class="ai-block">
                         <div class="ai-block-title">舆论风向争议</div>
                         <div class="ai-block-content">{content_html}</div>
                     </div>"""
 
-    if result.signals:
-        content = _format_list_content(result.signals)
-        content_html = _escape_html(content).replace("\n", "<br>")
-        ai_html += f"""
+        if result.signals:
+            content = _format_list_content(result.signals)
+            content_html = _escape_html(content).replace("\n", "<br>")
+            ai_html += f"""
                     <div class="ai-block">
                         <div class="ai-block-title">异动与弱信号</div>
                         <div class="ai-block-content">{content_html}</div>
                     </div>"""
 
-    if result.rss_insights:
-        content = _format_list_content(result.rss_insights)
-        content_html = _escape_html(content).replace("\n", "<br>")
-        ai_html += f"""
+        if result.rss_insights:
+            content = _format_list_content(result.rss_insights)
+            content_html = _escape_html(content).replace("\n", "<br>")
+            ai_html += f"""
                     <div class="ai-block">
                         <div class="ai-block-title">RSS 深度洞察</div>
                         <div class="ai-block-content">{content_html}</div>
                     </div>"""
 
-    if result.outlook_strategy:
-        content = _format_list_content(result.outlook_strategy)
-        content_html = _escape_html(content).replace("\n", "<br>")
-        ai_html += f"""
+        if result.outlook_strategy:
+            content = _format_list_content(result.outlook_strategy)
+            content_html = _escape_html(content).replace("\n", "<br>")
+            ai_html += f"""
                     <div class="ai-block">
                         <div class="ai-block-title">研判策略建议</div>
                         <div class="ai-block-content">{content_html}</div>
                     </div>"""
 
-    if result.standalone_summaries:
-        summaries_text = _format_standalone_summaries(result.standalone_summaries)
-        if summaries_text:
-            summaries_html = _escape_html(summaries_text).replace("\n", "<br>")
-            ai_html += f"""
+        if result.standalone_summaries:
+            summaries_text = _format_standalone_summaries(result.standalone_summaries)
+            if summaries_text:
+                summaries_html = _escape_html(summaries_text).replace("\n", "<br>")
+                ai_html += f"""
                     <div class="ai-block">
                         <div class="ai-block-title">独立源点速览</div>
                         <div class="ai-block-content">{summaries_html}</div>

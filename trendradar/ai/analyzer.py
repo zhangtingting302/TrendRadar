@@ -25,6 +25,9 @@ class AIAnalysisResult:
     outlook_strategy: str = ""           # 研判与策略建议
     standalone_summaries: Dict[str, str] = field(default_factory=dict)  # 独立展示区概括 {源ID: 概括}
 
+    # 自定义六板块（AI实战派专用）
+    custom_sections: Dict[str, str] = field(default_factory=dict)  # {section_id: content}
+
     # 基础元数据
     raw_response: str = ""               # 原始响应
     success: bool = False                # 是否成功
@@ -338,6 +341,13 @@ class AIAnalyzer:
                             line = f"- {title}"
                         if time_display:
                             line += f" | {time_display}"
+
+                        # 附加摘要（如有），帮助AI理解项目内容
+                        summary = t.get("summary", "")
+                        if summary:
+                            summary_brief = summary[:200].replace("\n", " ").strip()
+                            line += f"\n  摘要：{summary_brief}"
+
                         rss_lines.append(line)
 
                         rss_count += 1
@@ -597,11 +607,23 @@ class AIAnalyzer:
 
         # 解析成功，提取字段
         try:
-            result.core_trends = data.get("core_trends", "")
-            result.sentiment_controversy = data.get("sentiment_controversy", "")
-            result.signals = data.get("signals", "")
-            result.rss_insights = data.get("rss_insights", "")
-            result.outlook_strategy = data.get("outlook_strategy", "")
+            # 提取自定义六板块字段（AI实战派专用）
+            custom_keys = [
+                "open_source_projects", "frontier_models", "ai_tools",
+                "ai_industry", "self_media", "fullstack",
+            ]
+            for key in custom_keys:
+                val = data.get(key, "")
+                if val:
+                    result.custom_sections[key] = str(val)
+
+            # 如果没有自定义字段，回退到原始字段
+            if not result.custom_sections:
+                result.core_trends = data.get("core_trends", "")
+                result.sentiment_controversy = data.get("sentiment_controversy", "")
+                result.signals = data.get("signals", "")
+                result.rss_insights = data.get("rss_insights", "")
+                result.outlook_strategy = data.get("outlook_strategy", "")
 
             # 解析独立展示区概括
             summaries = data.get("standalone_summaries", {})

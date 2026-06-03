@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>GitHub 高星新项目</title>
+    <link>https://github.com/trending</link>
+    <description>最近7天新建的 Star&gt;50 的 GitHub 项目</description>
+    <language>zh-CN</language>
+    <item>
+      <title>pewdiepie-archdaemon/odysseus [JavaScript] (24184 stars)</title>
+      <link>https://github.com/pewdiepie-archdaemon/odysseus</link>
+      <description>Self-hosted AI workspace.  | Language: JavaScript | Stars: 24184</description>
+      <pubDate>2026-05-31T14:05:51Z</pubDate>
+      <guid>https://github.com/pewdiepie-archdaemon/odysseus</guid>
+    </item>
+    <item>
+      <title>op7418/guizang-social-card-skill [HTML] (2506 stars)</title>
+      <link>https://github.com/op7418/guizang-social-card-skill</link>
+      <description>🪧 Claude Code / Codex skill — generate Xiaohongshu carousels &amp; WeChat 21:9+1:1 cover pairs. Editorial × Swiss visual systems, 28 layouts, 10 themes, single-file HTML → PNG. 小红书图文 + 公众号封面对 | Topics: agent-skill, ai-agent, anthropic, claude-code, claude-skill, codex, editorial-design, html-template, image-generation, playwright | Homepage: https://github.com/op7418/guizang-social-card-skill | Language: HTML | Stars: 2506</description>
+      <pubDate>2026-05-27T12:05:05Z</pubDate>
+      <guid>https://github.com/op7418/guizang-social-card-skill</guid>
+    </item>
+    <item>
+      <title>helloianneo/ian-xiaohei-illustrations (1689 stars)</title>
+      <link>https://github.com/helloianneo/ian-xiaohei-illustrations</link>
+      <description>中文小黑怪诞正文配图生成 Skill | 16:9 白底手绘 | 少量红橙蓝批注 | Codex Skill | Topics: ai-agent, chinese, codex-skill, handdrawn, illustration, image-generation, xiaohei | Homepage: https://ianneo.xyz | Language: N/A | Stars: 1689</description>
+      <pubDate>2026-05-27T22:47:56Z</pubDate>
+      <guid>https://github.com/helloianneo/ian-xiaohei-illustrations</guid>
+    </item>
+    <item>
+      <title>GordenSun/GordenPPTSkill [Python] (1494 stars)</title>
+      <link>https://github.com/GordenSun/GordenPPTSkill</link>
+      <description>AI-friendly PPT builder skill: 17 hand-polished Chinese PPTX templates + non-destructive text-only editing tools (python-pptx based). Pick a template, write edits.json, build a real .pptx with the layout intact. Personal/research use only. | Language: Python | Stars: 1494</description>
+      <pubDate>2026-05-27T10:25:58Z</pubDate>
+      <guid>https://github.com/GordenSun/GordenPPTSkill</guid>
+    </item>
+    <item>
+      <title>Sophomoresty/gemini-web2api [Python] (1165 stars)</title>
+      <link>https://github.com/Sophomoresty/gemini-web2api</link>
+      <description>Convert Google Gemini web into OpenAI-compatible API. Zero auth, cross-platform, single file. | Language: Python | Stars: 1165</description>
+      <pubDate>2026-05-28T11:25:55Z</pubDate>
+      <guid>https://github.com/Sophomoresty/gemini-web2api</guid>
+    </item>
+    <item>
+      <title>MatinSenPai/SenPaiScanner [Go] (869 stars)</title>
+      <link>https://github.com/MatinSenPai/SenPaiScanner</link>
+      <description>A light-weight scanner for Cloudflare IPs, written in Golang | Language: Go | Stars: 869</description>
+      <pubDate>2026-05-28T17:02:54Z</pubDate>
+      <guid>https://github.com/MatinSenPai/SenPaiScanner</guid>
+    </item>
+    <item>
+      <title>Gloridust/WechatOnCloud [TypeScript] (859 stars)</title>
+      <link>https://github.com/Gloridust/WechatOnCloud</link>
+      <description>云微WOC，云微信，自由连接 | Language: TypeScript | Stars: 859</description>
+      <pubDate>2026-05-29T06:14:13Z</pubDate>
+      <guid>https://github.com/Gloridust/WechatOnCloud</guid>
+    </item>
+    <item>
+      <title>asz798838958/aBaiAutoplus [Python] (749 stars)</title>
+      <link>https://github.com/asz798838958/aBaiAutoplus</link>
+      <description>多平台 AI 账号自动注册与管理 · 协议化付款一键开通 ChatGPT Plus | Language: Python | Stars: 749</description>
+      <pubDate>2026-05-31T14:29:52Z</pubDate>
+      <guid>https://github.com/asz798838958/aBaiAutoplus</guid>
+    </item>
+    <item>
+      <title>Michaelliv/pi-dynamic-workflows [TypeScript] (723 stars)</title>
+      <link>https://github.com/Michaelliv/pi-dynamic-workflows</link>
+      <description>Language: TypeScript | Stars: 723</description>
+      <pubDate>2026-05-28T20:46:15Z</pubDate>
+      <guid>https://github.com/Michaelliv/pi-dynamic-workflows</guid>
+    </item>
+    <item>
+      <title>withkynam/vibecode-pro-max-kit [JavaScript] (707 stars)</title>
+      <link>https://github.com/withkynam/vibecode-pro-max-kit</link>
+      <description>Your AI forgets. This remembers. Spec-driven coding harness for vibecoders, product owners, CEOs and real builders — self-improving context memory, 12 agents, 32 skills. Kills context rot, ships features, not spaghetti. Claude Code &amp; Codex. Any stack. 30 seconds | Topics: agentic, ai-agents, ai-coding-assistant, ai-development, ai-workflow, anthropic, claude, claude-code, cli-tools, code-quality | Language: JavaScript | Stars: 707</description>
+      <pubDate>2026-05-27T05:46:25Z</pubDate>
+      <guid>https://github.com/withkynam/vibecode-pro-max-kit</guid>
+    </item>
+    <item>
+      <title>2aronS/Duel-Agents [TypeScript] (652 stars)</title>
+      <link>https://github.com/2aronS/Duel-Agents</link>
+      <description>CLI, SDK, and IDE plugins for Duel Agents | Topics: ai-agents, anthropic, claude-code, cli, cursor, duel-agents, llm, npm, openai-compatible, openclaw | Homepage: https://duelagents.com | Language: TypeScript | Stars: 652</description>
+      <pubDate>2026-05-28T10:45:44Z</pubDate>
+      <guid>https://github.com/2aronS/Duel-Agents</guid>
+    </item>
+    <item>
+      <title>liyue-aigc/female-portrait-director (466 stars)</title>
+      <link>https://github.com/liyue-aigc/female-portrait-director</link>
+      <description>A modular Codex Skill for directing and expanding detailed AI female portrait prompts. | Topics: ai-image-generation, codex, codex-skill, open-source, prompt-engineering | Language: N/A | Stars: 466</description>
+      <pubDate>2026-05-30T06:32:54Z</pubDate>
+      <guid>https://github.com/liyue-aigc/female-portrait-director</guid>
+    </item>
+    <item>
+      <title>jdevalk/specification.website [TypeScript] (417 stars)</title>
+      <link>https://github.com/jdevalk/specification.website</link>
+      <description>Website specification — HTML, accessibility, security, SEO, agent-readiness. Platform-agnostic, sourced, MIT. | Topics: accessibility, agent-readiness, astro, cloudflare-pages, llms-txt, mcp, seo, specification, web-security, web-standards | Homepage: https://specification.website | Language: TypeScript | Stars: 417</description>
+      <pubDate>2026-05-29T09:13:26Z</pubDate>
+      <guid>https://github.com/jdevalk/specification.website</guid>
+    </item>
+    <item>
+      <title>QwenLM/Qwen-VLA (403 stars)</title>
+      <link>https://github.com/QwenLM/Qwen-VLA</link>
+      <description>The official repository of Qwen-VLA | Language: N/A | Stars: 403</description>
+      <pubDate>2026-05-28T03:46:53Z</pubDate>
+      <guid>https://github.com/QwenLM/Qwen-VLA</guid>
+    </item>
+    <item>
+      <title>anomalyco/rift [Rust] (398 stars)</title>
+      <link>https://github.com/anomalyco/rift</link>
+      <description>Language: Rust | Stars: 398</description>
+      <pubDate>2026-05-31T18:09:30Z</pubDate>
+      <guid>https://github.com/anomalyco/rift</guid>
+    </item>
+    <item>
+      <title>garnix-io/garnix-ci [Haskell] (374 stars)</title>
+      <link>https://github.com/garnix-io/garnix-ci</link>
+      <description>CI and hosting for nix-based, flakified github repos | Language: Haskell | Stars: 374</description>
+      <pubDate>2026-05-27T17:48:52Z</pubDate>
+      <guid>https://github.com/garnix-io/garnix-ci</guid>
+    </item>
+    <item>
+      <title>DannyMac180/skills [Python] (350 stars)</title>
+      <link>https://github.com/DannyMac180/skills</link>
+      <description>AI agent skills created by me: Dan McAteer | Language: Python | Stars: 350</description>
+      <pubDate>2026-05-29T14:54:55Z</pubDate>
+      <guid>https://github.com/DannyMac180/skills</guid>
+    </item>
+    <item>
+      <title>qiuqiubuchongle-cloud/chokepoint-atlas (331 stars)</title>
+      <link>https://github.com/qiuqiubuchongle-cloud/chokepoint-atlas</link>
+      <description>Language: N/A | Stars: 331</description>
+      <pubDate>2026-06-01T08:52:27Z</pubDate>
+      <guid>https://github.com/qiuqiubuchongle-cloud/chokepoint-atlas</guid>
+    </item>
+    <item>
+      <title>ikeda042/PhenoPixel [TypeScript] (331 stars)</title>
+      <link>https://github.com/ikeda042/PhenoPixel</link>
+      <description>PhenoPixel: A web application for single-cell microscopy image analysis (deployed at Hiroshima University). | Topics: bacteria, bioinformatics-pipeline, cell-analysis, cell-contour, fastapi, fluorescence-microscopy-imaging, microbiology, nikon-nd2, opencv, react | Language: TypeScript | Stars: 331</description>
+      <pubDate>2026-05-27T03:56:54Z</pubDate>
+      <guid>https://github.com/ikeda042/PhenoPixel</guid>
+    </item>
+    <item>
+      <title>polymaxi2/polymarket-arbitrage-trading-bot (314 stars)</title>
+      <link>https://github.com/polymaxi2/polymarket-arbitrage-trading-bot</link>
+      <description>polymarket trading bot polymarket bot polymarket bot polymarket bot polymarket trading bot polymarket trading bot polymarket trading bot polymarket trading bot polymarket trading bot polymarket trading bot polymarket trading bot polymarket bot polymarket bot polymarket bot polymarket trading bot polymarket bot polymarket bot polymarket trading bot | Topics: 15min, 5min, ai, arbitrage, arbitragebot, bot, btc, polymarket, polymarket-arbitrage-trading-bot, polymarket-bot | Homepage: https://t.me/0xRicker | Language: N/A | Stars: 314</description>
+      <pubDate>2026-05-31T00:10:17Z</pubDate>
+      <guid>https://github.com/polymaxi2/polymarket-arbitrage-trading-bot</guid>
+    </item>
+    <item>
+      <title>BoundingBoxSoftware/CharacterController [C#] (309 stars)</title>
+      <link>https://github.com/BoundingBoxSoftware/CharacterController</link>
+      <description>A character controller for Unity that covers many edge cases. | Language: C# | Stars: 309</description>
+      <pubDate>2026-05-27T04:47:29Z</pubDate>
+      <guid>https://github.com/BoundingBoxSoftware/CharacterController</guid>
+    </item>
+    <item>
+      <title>bonus-2026/crypto-casino-bonus (300 stars)</title>
+      <link>https://github.com/bonus-2026/crypto-casino-bonus</link>
+      <description>Explore the best Crypto Casino Bonus - including no deposit welcome bonuses. Learn about Bitcoin casino rewards, free spins, cashback offers, crypto payments, mobile gaming, and responsible online casino promotions. | Language: N/A | Stars: 300</description>
+      <pubDate>2026-05-29T10:54:11Z</pubDate>
+      <guid>https://github.com/bonus-2026/crypto-casino-bonus</guid>
+    </item>
+    <item>
+      <title>yb2460/harness-anything [Python] (294 stars)</title>
+      <link>https://github.com/yb2460/harness-anything</link>
+      <description>CLI harness for WPS Office -- let AI agents control Writer, Calc &amp; Impress via COM automation | Topics: ai-agent, automation, cli, cli-anything, com, office, python, windows, wps | Language: Python | Stars: 294</description>
+      <pubDate>2026-05-27T08:25:28Z</pubDate>
+      <guid>https://github.com/yb2460/harness-anything</guid>
+    </item>
+    <item>
+      <title>MatixYo/ESP32-Plane-Radar [C++] (286 stars)</title>
+      <link>https://github.com/MatixYo/ESP32-Plane-Radar</link>
+      <description>Open-source ESP32 firmware for a 1.28″ round display that shows live ADS-B aircraft around your location as a sonar-style plane radar. | Language: C++ | Stars: 286</description>
+      <pubDate>2026-05-31T08:25:05Z</pubDate>
+      <guid>https://github.com/MatixYo/ESP32-Plane-Radar</guid>
+    </item>
+    <item>
+      <title>ClaudioDrews/memory-os [Python] (265 stars)</title>
+      <link>https://github.com/ClaudioDrews/memory-os</link>
+      <description>A 6-layer memory operating system for Hermes Agent — persistent memory with Qdrant, structured facts, fabric recall, auto-curated wiki, and surgical context injection. Runs locally, any LLM provider. | Language: Python | Stars: 265</description>
+      <pubDate>2026-05-31T19:50:25Z</pubDate>
+      <guid>https://github.com/ClaudioDrews/memory-os</guid>
+    </item>
+    <item>
+      <title>zgwl/chinese-buy-us-stock-guide (247 stars)</title>
+      <link>https://github.com/zgwl/chinese-buy-us-stock-guide</link>
+      <description>美股指南 | Language: N/A | Stars: 247</description>
+      <pubDate>2026-05-30T04:27:25Z</pubDate>
+      <guid>https://github.com/zgwl/chinese-buy-us-stock-guide</guid>
+    </item>
+    <item>
+      <title>BlackCandleLab/polymarket-trading-bot [JavaScript] (241 stars)</title>
+      <link>https://github.com/BlackCandleLab/polymarket-trading-bot</link>
+      <description>polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket trading bot, polymarket arbitrage bot, polymarket trading bot, polymarket arbitrage bot, polymarket trading bot, polymarket arbitrage bot, polymarket trading bot, polymarket arbitrage bot,  | Topics: algorithmic-trading, arbitrage, automated-trading, btc-trading-bot, clob, copy-trading, crypto-trading-bot, defi, ethereum, market-making | Homepage: https://github.com/BlackCandleLab/polymarket-trading-bot | Language: JavaScript | Stars: 241</description>
+      <pubDate>2026-05-28T17:14:14Z</pubDate>
+      <guid>https://github.com/BlackCandleLab/polymarket-trading-bot</guid>
+    </item>
+    <item>
+      <title>yuyefeiyu/yt-downloader [C#] (230 stars)</title>
+      <link>https://github.com/yuyefeiyu/yt-downloader</link>
+      <description>youtube downloader yt downloader mp3 converter 4k video download yt-dlp github free download windows 11 android apk | Topics: business-video-downloader, deezer-downloader, how-to-download-tiktok-videos, instagram-downloader, open-source-video-downloader, qobuz-downloader, slideshare-downloader, spotify-downloader, tikdl, tiktok-downloads | Language: C# | Stars: 230</description>
+      <pubDate>2026-05-29T17:53:57Z</pubDate>
+      <guid>https://github.com/yuyefeiyu/yt-downloader</guid>
+    </item>
+    <item>
+      <title>JuneYaooo/nihaixia-tcm [Python] (228 stars)</title>
+      <link>https://github.com/JuneYaooo/nihaixia-tcm</link>
+      <description>倪海厦中医课程资料的 Agent Skill：支持课程检索、方证穴位辨析、学习笔记整理与板书截图证据索引。 |  An Agent Skill for Ni Haixia TCM course study, formula-pattern lookup, acupoint reference, and screenshot evidence indexing. | Topics: acupuncture, agent-skills, claude-code-skills, codex-skill, nihaixia, shennong, tcm, tcmcp, traditional-chinese-medicine, traditional-chinese-medicine-healthcare | Language: Python | Stars: 228</description>
+      <pubDate>2026-05-27T02:01:16Z</pubDate>
+      <guid>https://github.com/JuneYaooo/nihaixia-tcm</guid>
+    </item>
+    <item>
+      <title>ProxyShard/ShardBrowser [TypeScript] (213 stars)</title>
+      <link>https://github.com/ProxyShard/ShardBrowser</link>
+      <description>Free, open-source anti-detect browser launcher for web scraping and multi-accounting. By the ProxyShard team. Engine-level fingerprint spoofing in Chromium 148 (WebGL / WebGPU / Client Hints / fonts / TLS), 170+ device profiles bundled, stable QUIC + WebRTC over SOCKS5. | Topics: ai-agents, anti-detect-browser, antidetect-browser, browser-fingerprinting, chromium, fingerprint, headless-browser, headless-chrome, multi-accounting, playwright | Language: TypeScript | Stars: 213</description>
+      <pubDate>2026-05-30T23:05:14Z</pubDate>
+      <guid>https://github.com/ProxyShard/ShardBrowser</guid>
+    </item>
+  </channel>
+</rss>

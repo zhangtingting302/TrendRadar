@@ -7,6 +7,7 @@ RSS 抓取器
 
 import time
 import random
+import os
 from dataclasses import dataclass
 from typing import List, Dict, Optional, Tuple
 
@@ -128,7 +129,7 @@ class RSSFetcher:
 
     def fetch_feed(self, feed: RSSFeedConfig) -> Tuple[List[RSSItem], Optional[str]]:
         """
-        抓取单个 RSS 源
+        抓取单个 RSS 源（支持本地文件路径）
 
         Args:
             feed: RSS 源配置
@@ -137,10 +138,23 @@ class RSSFetcher:
             (条目列表, 错误信息) 元组
         """
         try:
-            response = self.session.get(feed.url, timeout=self.timeout)
-            response.raise_for_status()
+            # 支持本地文件路径（file:// 或不以 http 开头的路径）
+            is_local = (
+                feed.url.startswith("file://")
+                or (not feed.url.startswith("http") and ("/" in feed.url or "\\" in feed.url))
+            )
+            if is_local:
+                local_path = feed.url.replace("file://", "").replace("file:\\\\", "")
+                if not os.path.isabs(local_path):
+                    local_path = os.path.join(os.getcwd(), local_path)
+                with open(local_path, "r", encoding="utf-8") as f:
+                    rss_text = f.read()
+            else:
+                response = self.session.get(feed.url, timeout=self.timeout)
+                response.raise_for_status()
+                rss_text = response.text
 
-            parsed_items = self.parser.parse(response.text, feed.url)
+            parsed_items = self.parser.parse(rss_text, feed.url)
 
             # 限制条目数量（0=不限制）
             if feed.max_items > 0:
